@@ -1,0 +1,29 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Test Game</title>
+    <link rel="stylesheet" href="./static/CSS/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Love Test Game</h1>
+        <p>Enter the names of the boy and girl to calculate the love percentage.</p>
+        
+        <!-- Display error message if any -->
+        {% if message %}
+            <p style="color: red;">{{ message }}</p>
+        {% endif %}
+        
+        <form action="/result" method="post">
+            <input type="text" name="boyName" placeholder="Enter the name of the boy">
+            <br>
+            <input type="text" name="girlName" placeholder="Enter the name of the girl">
+            <br>
+            <input type="submit" value="Calculate Love Percentage">
+        </form>
+    </div>
+</body>
+</html>
